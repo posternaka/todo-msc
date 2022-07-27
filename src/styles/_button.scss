@@ -1,0 +1,25 @@
+
+.button {
+    border: 1px solid $gray-line;
+    font-size: 16px;
+    margin-left: 2px;
+    border-radius: 5px;
+    padding: 2px 10px;
+    background-color: $gray-line;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+
+    &:hover {
+        border-radius: 5px;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+    }
+
+    &.active {
+        border-radius: 5px;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+    }
+}
+
+.clean:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
