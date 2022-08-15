@@ -12,6 +12,7 @@ function InfoTodoItems({ settingsShowTodo, setStateShowTodo, setChangeSettingsTo
             {
                 settingsShowTodo.map((item, index) => (
                     <button 
+                        key={index}
                         className={index === changeSettingsTodo ? 'button active' : 'button'}
                         onClick={() => handleSetShowTodo(index, item)}
                     >

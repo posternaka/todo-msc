@@ -7,7 +7,9 @@ export type TodoItem = {
 export type HeaderProps = {
     todoName: string;
     addTodo: () => void;
-    setTodoName: React.Dispatch<React.SetStateAction<string>>
+    setTodoName: React.Dispatch<React.SetStateAction<string>>;
+    checkArrow: boolean;
+    setCheckArrow: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 export type TodoItemsProps = {

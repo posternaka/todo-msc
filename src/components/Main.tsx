@@ -1,12 +1,5 @@
 import React from 'react';
 import '../styles/main.scss';
-import {
-    Accordion,
-    AccordionItem,
-    AccordionItemButton,
-    AccordionItemHeading,
-    AccordionItemPanel,
-} from 'react-accessible-accordion';
 
 import Header from './Header';
 import TodoList from './TodoList';
@@ -44,11 +37,12 @@ function Main() {
     const [changeSettingsTodo, setChangeSettingsTodo] = React.useState(0);
     const [stateShowTodo, setStateShowTodo] = React.useState(settingsShowTodo[0]);
     const [todoName, setTodoName] = React.useState('');
+    const [checkArrow, setCheckArrow] = React.useState(false);
 
     const dispatch = useAppDispatch();
     
     const state = useAppSelector(state => state);
-    const itemsLeft = state.inputValue.filter(item => !item.checkbox).length
+    const itemsLeft = state.inputValue.filter(item => !item.checkbox).length;
 
     const addTodo = () => {
         if(!todoName) {
@@ -69,19 +63,25 @@ function Main() {
             <main>
                 <div className='wrapper'>
                     <div className="container">
-                        <Accordion className='todo'>
-                            <AccordionItem key='fasdgasdg'>
-                                <AccordionItemHeading >
-                                    <AccordionItemButton className='todo__title cart' >
-                                        <Header todoName={todoName} setTodoName={setTodoName} addTodo={addTodo}/>
-                                    </AccordionItemButton>
-                                </AccordionItemHeading>
-                                <AccordionItemPanel >
-                                    <TodoList todoList={todoList} />
-                                </AccordionItemPanel>
-                            </AccordionItem>
+                        <div className='todo'>
+                            <div className='todo__title cart' >
+                                <Header 
+                                    todoName={todoName} 
+                                    setTodoName={setTodoName} 
+                                    addTodo={addTodo}
+                                    checkArrow={checkArrow}
+                                    setCheckArrow={setCheckArrow}
+                                />
+                            </div>
+                            {
+                                checkArrow 
+                                ? <TodoList todoList={todoList} />
+                                : ''
+                            }
                             <div className='todo__footer'>
-                                <div className="count">{itemsLeft} items left</div>
+                                <div className="count">
+                                    {itemsLeft} items left
+                                </div>
                                 <InfoTodoItems 
                                     settingsShowTodo={settingsShowTodo} 
                                     setStateShowTodo={setStateShowTodo} 
@@ -97,7 +97,7 @@ function Main() {
                                     </button>
                                 </div>
                             </div>
-                        </Accordion>
+                        </div>
                     </div>
                 </div>
             </main>

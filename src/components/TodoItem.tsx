@@ -12,7 +12,7 @@ function TodoItem({ item }: TodoItemsProps) {
             <input 
                 type="checkbox" 
                 checked={item.checkbox} 
-                onClick={() => dispatch(checkbox(item.id))}
+                onChange={() => dispatch(checkbox(item.id))}
             />
             <span className="checkmark"></span>
             <p className={item.checkbox ? 'underline' : ''}>{item.textTask}</p> 

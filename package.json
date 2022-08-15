@@ -1,4 +1,5 @@
 {
+  "homepage": "https://posternaka.github.io/todo-msc",
   "name": "todo-msc",
   "version": "0.1.0",
   "private": true,
@@ -9,9 +10,9 @@
     "@types/react": "^18.0.15",
     "@types/react-dom": "^18.0.6",
     "@types/react-redux": "^7.1.24",
+    "gh-pages": "^4.0.0",
     "node-sass": "^7.0.1",
     "react": "^18.2.0",
-    "react-accessible-accordion": "^5.0.0",
     "react-dom": "^18.2.0",
     "react-redux": "^8.0.2",
     "react-scripts": "5.0.1",
@@ -24,7 +25,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "test-jest": "jest"
+    "test-jest": "jest",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
