@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/todo-msc/static/css/main.977a203a.css",
+    "main.js": "/todo-msc/static/js/main.7e9345d5.js",
+    "index.html": "/todo-msc/index.html",
+    "main.977a203a.css.map": "/todo-msc/static/css/main.977a203a.css.map",
+    "main.7e9345d5.js.map": "/todo-msc/static/js/main.7e9345d5.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.977a203a.css",
+    "static/js/main.7e9345d5.js"
+  ]
+}
